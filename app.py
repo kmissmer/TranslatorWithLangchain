@@ -217,18 +217,7 @@ def main():
     
     if os.path.isfile("Penguin.png"):
         st.sidebar.image("Penguin.png", width=150)
-    else:
-        # Lang the Penguin ASCII art
-        penguin_ascii = '''
-        ```
-           _~_
-          (o o)
-         /  V  \\
-        /(  _  )\\
-         ^ "" ^
-        ```
-        '''
-        st.sidebar.markdown(penguin_ascii)
+   
     
     st.sidebar.markdown("*Lang the Penguin is here to help with your translations!*")
     
