@@ -72,9 +72,8 @@ A context-aware translation tool that not only translates text but also provides
 
 ## Adding Penguin Images
 
-For the full experience, add the following images to your project directory:
-- `lang_penguin.png` - Main mascot image
-- `Penguin.png` - Sidebar mascot image
+For the full experience, add the following image to your project directory:
+- `Penguin.png` 
 
 ## Customization
 
