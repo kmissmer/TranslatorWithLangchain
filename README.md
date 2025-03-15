@@ -83,9 +83,6 @@ You can customize the application by:
 - Adding more languages to the `languages` list in the `ContextAwareTranslator` class
 - Changing the model by updating the `model_name` parameter in the `ContextAwareTranslator` class
 
-## License
-
-[MIT License](LICENSE)
 
 ## Acknowledgements
 
