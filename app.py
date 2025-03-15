@@ -1,4 +1,4 @@
-# streamlit_translator.py
+# Imports I used
 import os
 import streamlit as st
 from typing import List, Dict
@@ -6,15 +6,15 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 
-# Load environment variables
+# Loading environment variables
 load_dotenv()
 
 
 class ContextAwareTranslator:
-    """A translator that provides both translation and contextual information."""
+    """A translator that provides both translation and contextual information for the user."""
     
     def __init__(self, model_name: str = "llama3-8b-8192"):
-        # Verify API key is available
+        # Verify that an API key for Groq is available
         if not os.environ.get("GROQ_API_KEY"):
             st.error("GROQ_API_KEY not found in environment variables. Please set it in your .env file.")
             st.stop()
@@ -30,19 +30,20 @@ class ContextAwareTranslator:
         ]
     
     def get_available_languages(self) -> List[str]:
-        """Return the list of available languages."""
+        """Returns the list of available languages."""
         return self.languages
     
     def create_translation_prompt(self) -> ChatPromptTemplate:
-        """Create a prompt template for translation with context."""
+        """Creates a prompt template for translation with context."""
         system_template = """You are a helpful translation assistant. Translate the following text from {source_language} to {target_language}.
         
-After the translation, provide:
-1. A brief cultural context about any idioms or culturally specific references
-2. Any alternate translations that might be more appropriate in different contexts
-3. Pronunciation guide for important or difficult words
-4. Also add a fun fact about penguins! 🐧
-"""
+        After the translation, provide:
+        1. A brief cultural context about any idioms or culturally specific references
+        2. Any alternate translations that might be more appropriate in different contexts
+        3. Pronunciation guide for important or difficult words
+        4. Also add a fun fact about penguins! 
+        
+        """
         
         prompt_template = ChatPromptTemplate.from_messages([
             ("system", system_template),
@@ -207,11 +208,12 @@ def main():
         "\n\n"
         "- Cultural context for idioms and expressions\n"
         "- Alternative translations for different contexts\n"
-        "- Pronunciation guides for important words\n\n"
+        "- Pronunciation guides for important words\n"
+        "- It even gives you a fun fact about penguins at the end of every translation!\n\n"
         "Powered by LangChain and Groq's LLaMA3 language model."
     )
     
-    # Add mascot to sidebar as well
+    # Add Lang the Penguin to sidebar as well
     st.sidebar.markdown("---")
     st.sidebar.markdown("## Meet Lang the Penguin")
     
