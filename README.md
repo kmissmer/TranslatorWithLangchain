@@ -72,7 +72,7 @@ A context-aware translation tool that not only translates text but also provides
 
 ## Adding Penguin Images
 
-For the full experience, add the following image to your project directory:
+For the full experience, make sure the following image is in your project directory:
 - `Penguin.png` 
 
 ## Customization
