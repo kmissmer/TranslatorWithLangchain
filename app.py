@@ -186,12 +186,11 @@ def main():
             else:
                 st.warning("Please enter text to translate.")
     
-    with main_cols[1]:  # Mascot column
-        # Push the mascot to the bottom using spacers
+    with main_cols[1]:  
         for _ in range(15):
             st.write("")
         
-        # Display Lang the Penguin
+        # Displays Lang the Penguin
         if os.path.isfile("lang_penguin.png"):
             st.image("lang_penguin.png", width=100)
         else:
